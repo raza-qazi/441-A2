@@ -5,9 +5,11 @@ import java.util.*;
 public class WebServer extends Thread {
 
     private Socket connection;
+    int portNum;
 
-    public WebServer(Socket socket) {
-        this.connection = socket;
+    public WebServer(int port) {
+        connection = new Socket();
+        portNum = port;
 
     }
 
@@ -16,7 +18,7 @@ public class WebServer extends Thread {
 
         ServerSocket servSocket;
         try {
-            servSocket = new ServerSocket(8888);
+            servSocket = new ServerSocket(portNum);
             while (true) {
                 Socket socket = servSocket.accept();
 
@@ -27,9 +29,10 @@ public class WebServer extends Thread {
         }
     }
 
-    public void start() {
+    public void shutdown() {
 
     }
+
 
 }
 
