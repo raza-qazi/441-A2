@@ -32,6 +32,7 @@ public class Tester {
 
 		System.out.println();
 		server.shutdown();
+
 		System.out.println("server stopped.");
 	}
 
